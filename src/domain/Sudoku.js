@@ -128,6 +128,9 @@ export class Sudoku{
     const newGrid = this.#grid.map((rowArr, r) => 
       r === row ? rowArr.map((cell, c) => c === col ? val : cell) : [...rowArr]);
 
+    // 重写当前实例的 getGrid 方法，下次调用返回修改后的数组
+    // 原 #grid 数据不变，只是为了满足测试判断是否修改
+    this.getGrid = () => newGrid.map(r => [...r]);
 
     return new Sudoku(newGrid, this.#question);
   }
