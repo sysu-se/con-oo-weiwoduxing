@@ -1,6 +1,6 @@
 <script>
-  import { createSudoku } from './lib/Sudoku.js';
-  import { createGame } from './lib/Game.js';
+  import { createSudoku } from './domain/Sudoku.js';
+  import { createGame } from './domain/Game.js';
   import SudokuBoard from './components/SudokuBoard.svelte';
   import GameControls from './components/GameControls.svelte';
   import StatusDisplay from './components/StatusDisplay.svelte';
