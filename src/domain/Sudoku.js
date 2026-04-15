@@ -178,7 +178,15 @@ export class Sudoku{
     const snapshotQuestion = this.#question.map(row => [...row]);
     return new Sudoku(snapshotGrid, snapshotQuestion);
   }
-
+  
+  /**
+   * 深克隆当前数独实例（对外暴露 clone 方法，满足契约要求）
+   * @returns {Sudoku} 新实例
+   */
+  clone(){
+    return this.snapshot(); // 复用已有快照逻辑，减少冗余
+  }
+  
   toJSON(){
     return{
       grid: this.getGrid(),
